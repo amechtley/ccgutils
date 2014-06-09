@@ -1,16 +1,43 @@
-# mtgutils
+# ccgutils
 
-This package contains utility modules for things related to Magic: The
-Gathering. Right now, it contains the following modules:
+This package contains utility modules for things related to collectable and
+living card games (Magic: The Gathering and Android: Netrunner). It currently
+contains the following modules:
 
-## parser
+## anr
+
+Modules for Android: Netrunner
+
+### parser
+
+This module contains utilities for parsing and converting file formats. It can
+be imported or run from the command line. For example, you can output a .o8d
+file from OCTGN/cardgamedb in a form that can be pasted into a text file that
+LackeyCC can import:
+
+```python parser.py -tolackey /path/to/some/octgn/deck.o8d```
+
+## mtg
+
+Modules for Magic: The Gathering
+
+### parser
 
 This module contains utilities for parsing and converting file formats. It can
 be imported or run from the command line. For example, you can output a .dek
 file from LackeyCCG in a form that can be pasted into the deck editor on
 deckstats.net:
 
-```python parser.py -todeckstats /path/to/some/Lackey/Deck.dek```
+```python parser.py -todeckstats /path/to/some/lackey/deck.dek```
+
+## lackey
+
+This module contains methods for getting cards from Lackey plugin databases and
+deck formats
+
+## octgn
+
+This module contains methods for getting cards from OCTGN deck formats.
 
 # Creation Info
 
