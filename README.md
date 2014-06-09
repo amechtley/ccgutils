@@ -12,10 +12,10 @@ Modules for Android: Netrunner
 
 This module contains utilities for parsing and converting file formats. It can
 be imported or run from the command line. For example, you can output a .o8d
-file from OCTGN/cardgamedb in a form that can be pasted into a text file that
-LackeyCC can import:
+file from OCTGN/cardgamedb in a form that can imported as a txt deck in
+LackeyCCG:
 
-```python parser.py -tolackey /path/to/some/octgn/deck.o8d```
+```python ccgutils/anr/parser.py -tolackey /path/to/deck.o8d -output /path/to/deck.txt```
 
 ## mtg
 
@@ -28,7 +28,7 @@ be imported or run from the command line. For example, you can output a .dek
 file from LackeyCCG in a form that can be pasted into the deck editor on
 deckstats.net:
 
-```python parser.py -todeckstats /path/to/some/lackey/deck.dek```
+```python ccgutils/mtg/parser.py -todeckstats /path/to/deck.dek```
 
 ## lackey
 
