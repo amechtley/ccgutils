@@ -15,7 +15,7 @@ be imported or run from the command line. For example, you can output a .o8d
 file from OCTGN/cardgamedb in a form that can imported as a txt deck in
 LackeyCCG:
 
-```python ccgutils/anr/parser.py -tolackey /path/to/deck.o8d -output /path/to/deck.txt```
+```python ccgutils/anr/parser.py /path/to/deck.o8d -tolackey -output /path/to/deck.txt```
 
 ## mtg
 
@@ -28,7 +28,7 @@ be imported or run from the command line. For example, you can output a .dek
 file from LackeyCCG in a form that can be pasted into the deck editor on
 deckstats.net:
 
-```python ccgutils/mtg/parser.py -todeckstats /path/to/deck.dek```
+```python ccgutils/mtg/parser.py /path/to/deck.dek -todeckstats```
 
 ## lackey
 

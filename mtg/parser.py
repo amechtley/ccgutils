@@ -29,15 +29,16 @@ def get_deckstats_text_string(path_to_lackey_dek):
 # process command-line arguments if running as __main__
 if __name__ == '__main__':
     try:
-        path_to_dek = sys.argv[sys.argv.index(TO_DECKSTATS_FLAG) + 1]
-    except ValueError:
+        path_to_dek = sys.argv[1]
+    except IndexError:
         path_to_dek = None
     if path_to_dek is not None:
-        deck_str = get_deckstats_text_string(path_to_dek)
-        sys.stdout.write(deck_str + '\n')
+        if TO_DECKSTATS_FLAG in sys.argv:
+            deck_str = get_deckstats_text_string(path_to_dek)
+            sys.stdout.write(deck_str + '\n')
     else:
         sys.stdout.write(
-            'usage: python {0} [{1} /path/to.dek]\n'.format(
+            'usage: python {0} /path/to.dek [{1}]\n'.format(
                 __file__, TO_DECKSTATS_FLAG
             )
         )

@@ -52,20 +52,21 @@ def get_lackey_text_string(path_to_octgn_deck):
 # process command-line arguments if running as __main__
 if __name__ == '__main__':
     try:
-        path_to_o8d = sys.argv[sys.argv.index(TO_LACKEY_FLAG) + 1]
-    except ValueError:
+        path_to_o8d = sys.argv[1]
+    except IndexError:
         path_to_o8d = None
     if path_to_o8d is not None:
-        deck_str = get_lackey_text_string(path_to_o8d)
-        try:
-            path_to_output = sys.argv[sys.argv.index(OUTPUT_FLAG) + 1]
-            with open(path_to_output, 'w+') as f:
-                f.write(deck_str)
-        except ValueError:
-            sys.stdout.write(deck_str + '\n')
+        if TO_LACKEY_FLAG in sys.argv:
+            deck_str = get_lackey_text_string(path_to_o8d)
+            try:
+                path_to_output = sys.argv[sys.argv.index(OUTPUT_FLAG) + 1]
+                with open(path_to_output, 'w+') as f:
+                    f.write(deck_str)
+            except ValueError:
+                sys.stdout.write(deck_str + '\n')
     else:
         sys.stdout.write(
-            'usage: python {0} [{1} /input/path.o8d {2} /output/path.txt]\n'.format(
+            'usage: python {0} /input/path.o8d [{1} {2} /output/path.txt]\n'.format(
                 __file__, TO_LACKEY_FLAG, OUTPUT_FLAG
             )
         )
